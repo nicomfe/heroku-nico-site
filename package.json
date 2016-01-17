@@ -93,8 +93,7 @@
     "npm": "^2.14.7"
   },
   "scripts": {
-    "start": "node server",
-    "postinstall": "bower install"
+    "start": "node server"
   },
   "private": true
 }
