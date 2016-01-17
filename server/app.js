@@ -4,11 +4,11 @@
 
 'use strict';
 
-var express require('express');
-var mongoose require('mongoose');
+var express = require('express');
+var mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
-var config require('./config/environment');
-var http require('http');
+var config = require('./config/environment');
+var http = require('http');
 
 // Connect to MongoDB
 mongoose.connect(process.env.MONGOLAB_URI || config.mongo.uri, config.mongo.options);
