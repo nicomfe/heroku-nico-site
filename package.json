@@ -94,7 +94,7 @@
   },
   "scripts": {
     "start": "node server",
-    "postinstall": "bower install",
+    "postinstall": "bower install"
   },
   "private": true
 }
