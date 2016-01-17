@@ -1,5 +1,5 @@
 {
-  "name": "heroku-nico",
+  "name": "nico-personal-site",
   "version": "0.0.0",
   "main": "server/app.js",
   "dependencies": {
