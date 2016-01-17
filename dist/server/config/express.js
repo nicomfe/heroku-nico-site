@@ -89,7 +89,7 @@ exports['default'] = function (app) {
     resave: false,
     store: new mongoStore({
       mongooseConnection: _mongoose2['default'].connection,
-      db: 'heroku-nico'
+      db: 'nico-personal-site'
     })
   }));
 

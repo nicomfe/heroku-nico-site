@@ -1,5 +1,5 @@
 {
-  "name": "heroku-nico",
+  "name": "nico-personal-site",
   "version": "0.0.0",
   "main": "server/app.js",
   "dependencies": {
@@ -93,9 +93,7 @@
     "npm": "^2.14.7"
   },
   "scripts": {
-    "start": "node server",
-    "test": "grunt test",
-    "update-webdriver": "node node_modules/grunt-protractor-runner/node_modules/protractor/bin/webdriver-manager update"
+    "start": "node server"
   },
   "private": true
 }
