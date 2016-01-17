@@ -5,11 +5,13 @@ angular.module('herokuNicoApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
-  'ui.router'
+  'ngRoute'
 ])
-  .config(function($urlRouterProvider, $locationProvider) {
-    $urlRouterProvider
-      .otherwise('/');
+  .config(function($routeProvider, $locationProvider) {
+    $routeProvider.otherwise({
+      redirectTo: '/'
+    });
 
     $locationProvider.html5Mode(true);
   });
+

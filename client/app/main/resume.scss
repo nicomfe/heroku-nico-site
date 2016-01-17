@@ -1,0 +1,63 @@
+@import "variables";
+
+.resume{
+  ul{
+    margin-top:10px;
+    margin-bottom:10px;
+  }
+  @media (min-width: $screen-sm-min) and (max-width: $screen-md-max){
+    .resume-tech{
+      text-align: center;
+    }
+  }
+  .resume-tech{
+    padding-top:3px !important;
+    padding-bottom:3px !important;
+    i{
+      margin-top:10px;
+      margin-bottom:10px;
+    }
+    &.stars-1{
+      i:nth-child(-n+1){
+        color:$nico-yellow;
+      }
+    }
+    &.stars-2{
+      i:nth-child(-n+2){
+        color:$nico-yellow;
+      }
+    }
+    &.stars-3{
+      i:nth-child(-n+3){
+        color:$nico-yellow;
+      }
+    }
+    &.stars-4{
+      i:nth-child(-n+4){
+        color:$nico-yellow;
+      }
+    }
+    &.stars-5{
+      i:nth-child(-n+5){
+        color:$nico-yellow;
+      }
+    }
+  }
+  .experience-item{
+    display:table;
+    margin-bottom: 15px;
+    .experience-header{
+      img{
+        display:block;
+        margin-left:auto;
+        margin-right:auto;
+        max-height:80px;
+        max-width: 250px;
+      }
+      h3, h4{
+        display:inline-table;
+        text-align: left;
+      }
+    }
+  }
+}

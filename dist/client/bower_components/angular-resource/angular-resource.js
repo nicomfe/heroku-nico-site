@@ -1,5 +1,5 @@
 /**
- * @license AngularJS v1.4.8
+ * @license AngularJS v1.4.0
  * (c) 2010-2015 Google, Inc. http://angularjs.org
  * License: MIT
  */
@@ -22,7 +22,7 @@ function lookupDottedPath(obj, path) {
     throw $resourceMinErr('badmember', 'Dotted member path "@{0}" is invalid.', path);
   }
   var keys = path.split('.');
-  for (var i = 0, ii = keys.length; i < ii && angular.isDefined(obj); i++) {
+  for (var i = 0, ii = keys.length; i < ii && obj !== undefined; i++) {
     var key = keys[i];
     obj = (obj !== null) ? obj[key] : undefined;
   }
@@ -214,8 +214,7 @@ function shallowClearAndCopy(src, dst) {
  *   - non-GET instance actions:  `instance.$action([parameters], [success], [error])`
  *
  *
- *   Success callback is called with (value, responseHeaders) arguments, where the value is
- *   the populated resource instance or collection object. The error callback is called
+ *   Success callback is called with (value, responseHeaders) arguments. Error callback is called
  *   with (httpResponse) argument.
  *
  *   Class actions return empty instance (with additional properties below).
@@ -353,7 +352,6 @@ function shallowClearAndCopy(src, dst) {
  */
 angular.module('ngResource', ['ng']).
   provider('$resource', function() {
-    var PROTOCOL_AND_DOMAIN_REGEX = /^https?:\/\/[^\/]*/;
     var provider = this;
 
     this.defaults = {
@@ -428,8 +426,7 @@ angular.module('ngResource', ['ng']).
           var self = this,
             url = actionUrl || self.template,
             val,
-            encodedVal,
-            protocolAndDomain = '';
+            encodedVal;
 
           var urlParams = self.urlParams = {};
           forEach(url.split(/\W/), function(param) {
@@ -442,10 +439,6 @@ angular.module('ngResource', ['ng']).
             }
           });
           url = url.replace(/\\:/g, ':');
-          url = url.replace(PROTOCOL_AND_DOMAIN_REGEX, function(match) {
-            protocolAndDomain = match;
-            return '';
-          });
 
           params = params || {};
           forEach(self.urlParams, function(_, urlParam) {
@@ -476,7 +469,7 @@ angular.module('ngResource', ['ng']).
           // E.g. `http://url.com/id./format?q=x` becomes `http://url.com/id.format?q=x`
           url = url.replace(/\/\.(?=\w+($|\?))/, '.');
           // replace escaped `/\.` with `/.`
-          config.url = protocolAndDomain + url.replace(/\/\\\./, '/.');
+          config.url = url.replace(/\/\\\./, '/.');
 
 
           // set params - delegate param encoding to $http
@@ -573,17 +566,8 @@ angular.module('ngResource', ['ng']).
               undefined;
 
             forEach(action, function(value, key) {
-              switch (key) {
-                default:
-                  httpConfig[key] = copy(value);
-                  break;
-                case 'params':
-                case 'isArray':
-                case 'interceptor':
-                  break;
-                case 'timeout':
-                  httpConfig[key] = value;
-                  break;
+              if (key != 'params' && key != 'isArray' && key != 'interceptor') {
+                httpConfig[key] = copy(value);
               }
             });
 
