@@ -16,11 +16,10 @@ $fa-font-path: "../bower_components/fontawesome/fonts";
   padding: 0.2em 0;
 }
 
-// Component styles are injected through grunt
-// injector
 @import 'main/_variables.scss';
 @import 'main/main.scss';
 @import 'main/svg-header.scss';
+@import 'get-in-touch/get-in-touch.scss';
 @import 'projects/projects.scss';
 @import 'resume/resume.scss';
-// endinjector
+
