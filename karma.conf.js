@@ -16,6 +16,8 @@ module.exports = function(config) {
       'client/bower_components/angular/angular.js',
       'client/bower_components/bootstrap/dist/js/bootstrap.js',
       'client/bower_components/angular-route/angular-route.js',
+      'client/bower_components/angular-resource/angular-resource.js',
+      'client/bower_components/angular-sanitize/angular-sanitize.js',
       'client/bower_components/angular-touch/angular-touch.js',
       'client/bower_components/angular-loading-bar/build/loading-bar.js',
       'client/bower_components/angular-cookies/angular-cookies.js',

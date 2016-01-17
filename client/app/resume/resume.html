@@ -1,0 +1,75 @@
+<div class="center-content resume">
+  <h1>RESUME</h1>
+  <div class="row">
+    <div class="col-sm-5">
+      <h2>Technologies</h2>
+      <ul>
+        <li class="resume-tech {{tech.stars}}" ng-repeat="tech in technologies">
+          <div class="row">
+            <div class="col-xs-3 col-sm-12 col-lg-3">
+              <h4>{{tech.name}}</h4>
+            </div>
+            <div class="col-xs-6 col-sm-12 col-lg-9">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <h2>Certifications</h2>
+      <ul>
+        <li class="experience-item" ng-repeat="certification in certifications">
+          <div class="experience-header">
+            <img ng-src="{{certification.img}}">
+            <div><h3>{{certification.title}}</h3></div>
+            <div><h4>{{certification.date}}</h4></div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="col-sm-7">
+      <h2>Work Experience</h2>
+      <ul>
+        <li class="experience-item" ng-repeat="experience in workExperience">
+          <div class="experience-header">
+            <img ng-src="{{experience.img}}">
+            <div><h3>{{experience.company}}</h3></div>
+            <div><h4>{{experience.period}}</h4></div>
+          </div>
+          <p>
+            {{experience.description}}
+          </p>
+          <div>
+            <div class="col-xs-6">
+              <i class="fa fa-map-marker"></i> {{experience.city}}
+            </div>
+            <div class="col-xs-6">
+              <a href="{{experience.website}}" target="_blank"><i class="fa fa-link"></i> Website</a>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <h2>Education</h2>
+      <ul>
+        <li class="experience-item" ng-repeat="education in educations">
+          <div class="experience-header">
+            <img ng-src="{{education.img}}">
+            <div><h3>{{education.title}}</h3></div>
+            <div><h4>{{education.date}}</h4></div>
+          </div>
+          <div>
+            <div class="col-xs-6">
+              <i class="fa fa-map-marker"></i> {{education.city}}
+            </div>
+            <div class="col-xs-6">
+              <a href="{{education.website}}" target="_blank"><i class="fa fa-link"></i> Website</a>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
