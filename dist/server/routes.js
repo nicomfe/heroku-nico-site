@@ -20,6 +20,7 @@ var _path2 = _interopRequireDefault(_path);
 
 exports['default'] = function (app) {
   // Insert routes below
+  app.use('/api/emails', require('./api/email'));
   app.use('/api/things', require('./api/thing'));
   // All undefined asset or api routes should return a 404
   app.route('/:url(api|auth|components|app|bower_components|assets)/*').get(_componentsErrors2['default'][404]);
