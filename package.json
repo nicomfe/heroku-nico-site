@@ -19,7 +19,9 @@
     "mongoose": "^4.1.2",
     "bluebird": "^2.9.34",
     "connect-mongo": "^0.8.1",
-    "serve-favicon": "^2.3.0"
+    "serve-favicon": "^2.3.0",
+    "nodemailer": "1.8.0",
+    "sendgrid": "1.9.2"
   },
   "devDependencies": {
     "autoprefixer": "^6.0.0",

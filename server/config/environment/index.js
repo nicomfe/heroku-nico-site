@@ -39,7 +39,9 @@ var all = {
         safe: true
       }
     }
-  }
+  },
+
+  sendgrid_api_key: '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'
 };
 
 // Export the config object based on the NODE_ENV
