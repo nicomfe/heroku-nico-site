@@ -1,11 +1,17 @@
 
-input{
+input, textarea{
   color:$nico-black;
+  font-family: sans-serif;
 }
 .btn{
   margin-left:auto;
   margin-right:auto;
   display:block;
+  &:hover{
+    background-color: $nico-black;
+    color: white;
+    border: solid 1px white;
+  }
 }
 
 .ss-icon{
@@ -101,3 +107,34 @@ html:hover [class^="ss-"]{-ms-zoom: 1;}
 
 [class^="ss-"].right:before,
 [class*=" ss-"].right:before{display:none;content:'';}
+
+.messages{
+  top:20px;
+  position: relative;
+  text-align: center;
+  font-family: sans-serif;
+  .success{
+    color: LightGreen;
+  }
+  .error{
+    color: LightSalmon;
+  }
+  .hide-message{
+    -webkit-animation: cssAnimation 5s;
+    -webkit-animation-fill-mode: forwards;
+    animation: cssAnimation 5s;
+    animation-fill-mode: forwards;
+  }
+}
+
+@-webkit-keyframes cssAnimation {
+  50% {
+    -webkit-transform: translateX(-5%);
+    transform: translateX(-5%);
+  }
+
+  100% {
+    -webkit-transform: translateX(200%);
+    transform: translateX(200%);
+  }
+}

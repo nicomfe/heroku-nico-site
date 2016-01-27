@@ -112,13 +112,19 @@ exports['default'] = function (app) {
     }));
   }
 
-  app.set('appPath', _path2['default'].join(_environment2['default'].root, 'client'));
-
   if ('production' === env) {
+    // minified version
+    app.set('appPath', _path2['default'].join(_environment2['default'].root, 'dist'));
+
+    // uncomment to deploy dev version
+    //app.set('appPath', path.join(config.root, 'client'));
+
     app.use((0, _serveFavicon2['default'])(_path2['default'].join(_environment2['default'].root, 'client', 'favicon.ico')));
     app.use(_express2['default']['static'](app.get('appPath')));
     app.use((0, _morgan2['default'])('dev'));
   }
+
+  app.set('appPath', _path2['default'].join(_environment2['default'].root, 'client'));
 
   if ('development' === env) {
     app.use(require('connect-livereload')());

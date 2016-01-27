@@ -4,7 +4,7 @@
     <div class="col-xs-12">
       <ul>
         <li>
-          <form name"contactForm" class="form-horizontal">
+          <form name="contactForm" class="form-horizontal">
             <div class="form-group">
               <div class="col-xs-12">
                 <input type="text" class="form-control" placeholder="Your name ..." name="name" ng-model="contactModel.name"/>
@@ -22,7 +22,11 @@
             </div>
             <div class="form-group">
               <div class="col-xs-12">
-                <input type="button" class="btn btn-lg" ng-click="sendEmail()" value="SEND"/>
+                <input type="button" ng-disabled="disableBtn" class="btn btn-lg" ng-click="sendEmail()" value="SEND"/>
+              </div>
+              <div class="messages" >
+                <p class="success" ng-class="(hideMessage)?'hide-message':''">{{successMessage}}</p>
+                <p class="error" ng-class="(hideMessage)?'hide-message':''">{{errorMessage}}</p>
               </div>
             </div>
           </form>
